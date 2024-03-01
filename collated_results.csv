@@ -1,0 +1,6 @@
+pipeline_cls,ckpt_id,bf16,sdpa,fused_qkv_projections,upcast_vae,batch_size,num_inference_steps,compile_unet,compile_vae,compile_mode,change_comp_config,do_quant,time (secs),memory (gbs),actual_gpu_memory (gbs),tag
+StableDiffusionXLPipeline,stabilityai/stable-diffusion-xl-base-1.0,False,False,False,False,1,30,False,False,,False,,8.605,16.827,79.154,
+StableDiffusionXLPipeline,stabilityai/stable-diffusion-xl-base-1.0,True,True,False,False,1,30,True,True,max-autotune,True,,3.038,8.328,79.154,
+StableDiffusionXLPipeline,stabilityai/stable-diffusion-xl-base-1.0,True,True,True,False,1,30,True,True,max-autotune,True,,2.990,10.529,79.154,
+StableDiffusionXLPipeline,stabilityai/stable-diffusion-xl-base-1.0,True,True,True,False,1,30,True,True,max-autotune,True,autoquant,2.887,9.665,79.154,
+StableDiffusionXLPipeline,stabilityai/stable-diffusion-xl-base-1.0,True,True,True,False,1,30,True,True,max-autotune,True,int8dynamic,2.928,7.866,79.154,

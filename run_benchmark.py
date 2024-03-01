@@ -37,6 +37,9 @@ def main(args) -> dict:
         do_quant=args.do_quant,
         compile_mode=args.compile_mode,
         change_comp_config=args.change_comp_config,
+        prompt=args.prompt,
+        num_inference_steps=args.num_inference_steps,
+        num_images_per_prompt=args.batch_size
     )
 
     # Warmup.
@@ -46,7 +49,7 @@ def main(args) -> dict:
 
     time = benchmark_fn(run_inference, pipeline, args)  # in seconds.
     memory = bytes_to_giga_bytes(torch.cuda.max_memory_allocated())  # in GBs.
-
+    print(f"time {time}, memory {memory}")
     data_dict = generate_csv_dict(
         pipeline_cls=str(pipeline.__class__.__name__),
         args=args,
